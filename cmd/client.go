@@ -27,8 +27,8 @@ var clientCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(clientCmd)
-	serverCmd.Flags().StringVarP(&connPort, "connPort", "c", "3333", "conn port")
-	serverCmd.Flags().StringVarP(&mode, "mode", "m", "1", "test mode")
+	clientCmd.Flags().StringVarP(&connPort, "connPort", "c", "3333", "conn port")
+	clientCmd.Flags().StringVarP(&mode, "mode", "m", "1", "test mode")
 }
 
 func client() {
