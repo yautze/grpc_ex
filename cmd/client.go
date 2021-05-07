@@ -47,6 +47,13 @@ func client() {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
+	switch mode {
+	case "1":
+		unary(ctx, c)
+	}
+}
+
+func unary(ctx context.Context, c pb.HelloServiceClient) {
 	r, err := c.SayHello(ctx, &pb.HelloRequest{Name: "YauTz"})
 	if err != nil {
 		log.Fatalf("could not get nonce: %v", err)
